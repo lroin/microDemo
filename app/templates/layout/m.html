@@ -1,0 +1,12 @@
+{% extends "layout/c.html" %}
+<html>
+{% if title %}
+<title>{{ title }}</title>
+{% else%}
+<title>default</title>
+{% endif %}
+<body>
+<h1>{{user.name}}</h1>
+<pre>{{user.number}}</pre>
+</body>
+</html>
