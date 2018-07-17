@@ -8,7 +8,11 @@ from flask_login import current_user, login_user
 @app.route('/')
 @app.route('/index')
 def index():
-    user={'name':current_user.username,'number':9527}
+    if current_user.is_authenticated:
+        user={'name':current_user.username if True else 0,'number':9527}
+    else:
+        user={'name':0,'number':9527}
+    
     return render_template('index.html', title='Home', user=user)
 
 @app.route('/login', methods=['GET', 'POST'])
